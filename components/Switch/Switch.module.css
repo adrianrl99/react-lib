@@ -1,0 +1,99 @@
+.Switch {
+  position: relative;
+
+  width: calc(var(--switch-size) * 2);
+  height: var(--switch-size);
+
+  & > input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  & > span {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 2rem;
+    background-color: rgb(255, 255, 255, 0.25);
+
+    transition-duration: 0.25s;
+    transition-timing-function: ease-in-out;
+    transition-property: background-color;
+
+    box-shadow: var(--shadow-inset);
+
+    &:before {
+      border-radius: 50%;
+      position: absolute;
+      content: '';
+      left: 5px;
+      bottom: 5px;
+      background-color: var(--switch-color);
+      box-shadow: var(--shadow);
+
+      transition-duration: 0.25s;
+      transition-timing-function: ease-in-out;
+      transition-property: transform;
+
+      height: calc(var(--switch-size) - 10px);
+      width: calc(var(--switch-size) - 10px);
+    }
+  }
+
+  &.Switch_active > span {
+    background-color: var(--switch-background-color);
+
+    &:before {
+      transform: translateX(var(--switch-size));
+    }
+  }
+}
+
+.Switch_primary,
+.Switch_secondary,
+.Switch_error,
+.Switch_warning,
+.Switch_info,
+.Switch_success {
+  --switch-color: var(--brightWhite);
+}
+
+.Switch_primary {
+  --switch-background-color: var(--primary);
+}
+
+.Switch_secondary {
+  --switch-background-color: var(--secondary);
+}
+
+.Switch_success {
+  --switch-background-color: var(--green);
+}
+
+.Switch_info {
+  --switch-background-color: var(--blue);
+}
+
+.Switch_warning {
+  --switch-background-color: var(--yellow);
+}
+
+.Switch_error {
+  --switch-background-color: var(--red);
+}
+
+.Switch_small {
+  --switch-size: 28px;
+}
+
+.Switch_medium {
+  --switch-size: 32px;
+}
+
+.Switch_large {
+  --switch-size: 36px;
+}

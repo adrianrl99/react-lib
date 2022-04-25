@@ -1,0 +1,13 @@
+.Center {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.Center_x {
+  justify-content: center;
+}
+
+.Center_y {
+  align-items: center;
+}

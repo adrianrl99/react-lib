@@ -1,0 +1,35 @@
+.Menu {
+  position: relative;
+  width: fit-content;
+}
+
+.Menu_container {
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  position: absolute;
+  z-index: 10;
+  right: 0;
+}
+
+.Menu_container_open {
+  visibility: visible;
+}
+
+.Menu_container_small {
+  top: 34px;
+}
+
+.Menu_container_medium {
+  top: 39px;
+}
+
+.Menu_container_large {
+  top: 44px;
+}
+
+.Menu_button {
+  min-width: auto;
+  border-radius: 50%;
+}

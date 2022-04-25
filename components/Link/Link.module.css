@@ -1,0 +1,18 @@
+.Link {
+  text-decoration: none;
+  color: var(--cyan);
+}
+
+.Link_button {
+  text-decoration: none;
+}
+
+.Link_card {
+  text-decoration: none;
+  display: flex;
+  color: var(--foreground);
+
+  & > * {
+    flex-grow: 1;
+  }
+}

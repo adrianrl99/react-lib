@@ -1,0 +1,8 @@
+.List {
+  display: flex;
+  gap: var(--list-gap);
+  flex-direction: var(--list-flexDirection);
+  justify-content: var(--list-justifyContent);
+  align-items: var(--list-alignItems);
+  flex-wrap: var(--list-flexWrap);
+}

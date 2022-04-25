@@ -1,0 +1,46 @@
+.Select {
+  position: relative;
+  width: fit-content;
+}
+
+.Select_container {
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  position: absolute;
+  z-index: 10;
+  right: 0;
+}
+
+.Select_container_open {
+  visibility: visible;
+}
+
+.Select_option {
+  background-color: transparent;
+  padding: 12px 16px;
+  color: var(--foreground);
+  cursor: pointer;
+  position: relative;
+  height: auto;
+  justify-content: flex-start;
+  min-width: auto;
+  white-space: nowrap;
+
+  & > span {
+    line-height: 1;
+  }
+}
+
+.Select_container_small {
+  top: 34px;
+}
+
+.Select_container_medium {
+  top: 39px;
+}
+
+.Select_container_large {
+  top: 44px;
+}
