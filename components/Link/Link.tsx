@@ -43,7 +43,7 @@ const Link: FC<LinkProps> = ({
     children,
     className: _className,
   }) =>
-    to.toString().startsWith('http') ? (
+    /^[http|mailto|tel]/.test(to.toString()) ? (
       <a
         target="_blank"
         rel="noreferrer"
