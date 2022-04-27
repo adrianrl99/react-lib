@@ -1,6 +1,7 @@
 .Link {
   text-decoration: none;
   color: var(--cyan);
+  word-break: break-all;
 }
 
 .Link_button {

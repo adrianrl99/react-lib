@@ -2,13 +2,11 @@ import { FC } from 'react'
 import {
   Link as RouteLink,
   LinkProps as RouterLinkProps,
-  useLocation,
 } from 'react-router-dom'
 
 import { Button, ButtonProps } from '@/components/Button'
 import { Card, CardProps } from '@/components/Card'
 import { classes } from '@/utils/classes'
-import { langInPathname } from '@/utils/langInPathname'
 
 import styles from './Link.module.css'
 
@@ -41,22 +39,25 @@ const Link: FC<LinkProps> = ({
   cardProps,
   ...props
 }) => {
-  const location = useLocation()
-  const paramsLang = langInPathname(location.pathname)
-  const lang = paramsLang ? `/${paramsLang}` : ''
-
   const Wrapper: FC<{ className?: string }> = ({
     children,
     className: _className,
-  }) => (
-    <RouteLink
-      className={classes(_className, className)}
-      to={`${lang}${to}`}
-      {...props}
-    >
-      {children}
-    </RouteLink>
-  )
+  }) =>
+    to.toString().startsWith('http') ? (
+      <a
+        target="_blank"
+        rel="noreferrer"
+        {...props}
+        href={to.toString()}
+        className={classes(_className, className)}
+      >
+        {children}
+      </a>
+    ) : (
+      <RouteLink className={classes(_className, className)} to={to} {...props}>
+        {children}
+      </RouteLink>
+    )
 
   if (asButton) {
     return (

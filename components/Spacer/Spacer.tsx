@@ -1,14 +1,17 @@
 import { Property } from 'csstype'
 import { FC, useLayoutEffect, useRef } from 'react'
 
+import { classes } from '@/utils/classes'
+
 import styles from './Spacer.module.css'
 
 export type SpacerProps = {
   height?: Property.Height
   width?: Property.Width
+  className?: string
 }
 
-export const Spacer: FC<SpacerProps> = ({ children, ...props }) => {
+export const Spacer: FC<SpacerProps> = ({ children, className, ...props }) => {
   const ref = useRef<HTMLDivElement>(null)
   useLayoutEffect(() => {
     const el = ref.current
@@ -22,7 +25,7 @@ export const Spacer: FC<SpacerProps> = ({ children, ...props }) => {
   }, [props])
 
   return (
-    <div ref={ref} className={styles.Spacer}>
+    <div ref={ref} className={classes(styles.Spacer, className)}>
       {children}
     </div>
   )

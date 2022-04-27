@@ -6,7 +6,6 @@
 
 .AccordionElement {
   padding: 0;
-  transition: margin 0.2s ease-in-out;
 }
 
 .AccordionElement_title {
@@ -72,6 +71,6 @@
   overflow: hidden;
   max-height: 0;
   transition-timing-function: ease-in-out;
-  transition-duration: 0.25s;
+  transition-duration: 0.3s;
   transition-properties: padding, margin, max-height;
 }
