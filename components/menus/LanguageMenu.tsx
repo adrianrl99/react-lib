@@ -1,4 +1,5 @@
 import { FC, useState } from 'react'
+import { SiGoogletranslate } from 'react-icons/si'
 import { useRecoilState } from 'recoil'
 
 import { Select } from '@/components/Select'
@@ -26,6 +27,9 @@ export const LanguageMenu: FC = () => {
       options={Object.keys(LANGUAGE_NAME)}
       renderValue={value => LANGUAGE_NAME[value as Language]}
       renderOption={option => LANGUAGE_NAME[option as Language]}
+      buttonProps={{
+        icon: <SiGoogletranslate />,
+      }}
     />
   )
 }
